@@ -1,0 +1,24 @@
+{
+  "name": "node-email-validator",
+  "version": "1.0.0",
+  "description": "This is a npm package that checks if email is valid or not and also raises a flag if an email ID is temporary, belongs to a private org or that mail server is not used much.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sayak119/node-email-validator.git"
+  },
+  "keywords": [
+    "email",
+    "npm-email",
+    "email-validator"
+  ],
+  "author": "Sayak Kundu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sayak119/node-email-validator/issues"
+  },
+  "homepage": "https://github.com/sayak119/node-email-validator#readme"
+}
