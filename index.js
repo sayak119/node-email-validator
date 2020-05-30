@@ -1,7 +1,7 @@
 // importing the built-in dns module.
-var DNS = require('dns');
+import { resolveMx } from 'dns';
 
-module.exports.emailValidator = emailAddress =>
+export function emailValidator(emailAddress)
 {
     return new Promise((resolve, reject) =>
     {
@@ -9,7 +9,7 @@ module.exports.emailValidator = emailAddress =>
         var user = splitEmail[0];
         var domain = splitEmail[1];
         // refer https://nodejs.org/api/dns.html#dns_dnspromises_resolvemx_hostname
-        DNS.resolveMx(domain, (error, mx) =>
+        resolveMx(domain, (error, mx) =>
         {
             if (typeof(mx) != 'undefined')
             {
@@ -43,4 +43,4 @@ module.exports.emailValidator = emailAddress =>
             }
         });
     });
-};
+}
