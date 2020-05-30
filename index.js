@@ -1,7 +1,7 @@
 // importing the built-in dns module.
 var DNS = require('dns');
 
-module.exports = emailValidator(emailAddress)
+module.exports = function(emailAddress)
 {
     return new Promise((resolve, reject) =>
     {
