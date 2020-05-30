@@ -29,13 +29,13 @@ module.exports = function(emailAddress)
                     }
                     else
                     {
-                        resolve({user:user, domain:domain, isEmailValid:false, mxRecords:null, possibility:true});
+                        resolve({user:user, domain:domain, isEmailValid:false, mxRecords:[], possibility:true});
                     }
                 }
             }
             else if (error.code == 'ENOTFOUND')
             {
-                resolve({user:user, domain:domain, isEmailValid:false, mxRecords:null, mxRecordExist:false});
+                resolve({user:user, domain:domain, isEmailValid:false, mxRecords:[], mxRecordExist:false});
             }
             else
             {
