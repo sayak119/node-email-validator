@@ -46,6 +46,10 @@ module.exports = function(emailAddress)
                 {
                     resolve({user:user, domain:domain, isEmailValid:false, mxRecords:[], mxRecordExist:false});
                 }
+                else if (error.code == 'ENODATA')
+                {
+                    resolve({user:user, domain:domain, isEmailValid:false, mxRecords:[], possibility:true});
+                }
                 else
                 {
                     reject(new Error(error.code));
