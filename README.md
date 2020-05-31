@@ -27,7 +27,8 @@ nev('username@mail-server.extension').then(validation => {console.log(validation
   domain: 'sharklasers.com',
   isEmailValid: true,
   mxRecords: [ { exchange: 'mail.guerrillamail.com', priority: 0 } ],
-  possibility: true
+  possibility: true,
+  timeout: false
 }
 ```
 
