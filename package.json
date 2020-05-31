@@ -10,10 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/sayak119/node-email-validator.git"
   },
+  "devDependencies": {
+    "should": "*",
+    "mocha": "*"
+  },
   "keywords": [
     "email",
     "npm-email",
-    "email-validator"
+    "email-validator",
+    "MX-records"
   ],
   "author": "Sayak Kundu",
   "license": "ISC",

@@ -39,6 +39,13 @@ nev('username@mail-server.extension').then(validation => {console.log(validation
 * `mxRecords` - It contains the MX records which are dictionaries of `exchange` and `priority` or `[]` if nothing is present.
 * `probability` - This returns `true` or `false` depending on the possibility of an email address being a `temporary email`, `email belonging to a private organization` or that `mail server is not used much in that region`.
 
+## How to run tests?
+
+* For running the tests, run the following command.
+```javascript
+npm test
+```
+
 ## License
 
 [ISC](./LICENSE)
