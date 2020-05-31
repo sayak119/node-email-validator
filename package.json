@@ -1,6 +1,6 @@
 {
   "name": "node-email-validator",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "This is a npm package that checks if email is valid or not and also raises a flag if an email ID is temporary, belongs to a private org or that mail server is not used much.",
   "main": "index.js",
   "scripts": {
