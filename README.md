@@ -38,6 +38,7 @@ nev('username@mail-server.extension').then(validation => {console.log(validation
 * `isEmailValid` - This returns `true` or `false` depending on the validity of the email address.
 * `mxRecords` - It contains the MX records which are dictionaries of `exchange` and `priority` or `[]` if nothing is present.
 * `probability` - This returns `true` or `false` depending on the possibility of an email address being a `temporary email`, `email belonging to a private organization` or that `mail server is not used much in that region`.
+* `timeout` - This returns `true` or `false` depending on the fact that the query caused timeout or not.
 
 ## How to run tests?
 

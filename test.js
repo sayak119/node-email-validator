@@ -9,7 +9,7 @@ describe('Email validity check on the basis of MX records', function()
         it('should return true when email address is valid', function()
         {
             nev('sk.sayakkundu1997@gmail.com').then(
-                result => result.isEmailValid.should.be.true && should.exist(result.mxRecords))
+                result => result.isEmailValid.should.be.true && result.timeout.should.be.false && should.exist(result.mxRecords))
                 .catch(err => should.exist(err.errors));
         });
     });
@@ -63,17 +63,19 @@ describe('Email validity check on the basis of MX records', function()
         it('should return an empty array of MX records', function()
         {
             nev('username@mail-server.extension.com').then(
-                result => should.be.empty(result.mxRecords))
+                result => result.mxRecords.should.be.empty())
                 .catch(err => console.log('caught', err.message));
         });
     });
-    // /* test-7: It is for checking that if 'isEmailValid' is false, then
-    //    either 'possibility' is true or 'mxRecordExist' is false. */
-    // describe('checking that if isEmailValid is false, then either possibility flag is true or mxRecordExist flag is false', function()
-    // {
-    //     it('should return possibility flag with value true or mxRecordExist flag with value false', function()
-    //     {
-    //         nev
-    //     })
-    // })
+    /* test-7: It is for checking that if 'isEmailValid' is false, then
+       either 'possibility' is true or 'mxRecordExist' is false. */
+    describe('checking that if isEmailValid is false, then either possibility flag is true or mxRecordExist flag is false', function()
+    {
+        it('should return possibility flag with value true or mxRecordExist flag with value false', function()
+        {
+            nev('username@mail-server.extension.com').then(
+                result => result.possibility.should.be.true || result.mxRecordExist.should.be.false)
+                .catch(err => should.exist(err.errors));
+        });
+    });
 });

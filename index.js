@@ -30,25 +30,29 @@ module.exports = function(emailAddress)
                         var mxLength = mx.length;
                         if (mxLength === 1)
                         {
-                            resolve({user:user, domain:domain, isEmailValid:true, mxRecords:mx, possibility:true});
+                            resolve({user:user, domain:domain, isEmailValid:true, mxRecords:mx, possibility:true, timeout:false});
                         }
                         else if (mxLength > 1)
                         {
-                            resolve({user:user, domain:domain, isEmailValid:true, mxRecords:mx, possibility:false});
+                            resolve({user:user, domain:domain, isEmailValid:true, mxRecords:mx, possibility:false, timeout:false});
                         }
                         else
                         {
-                            resolve({user:user, domain:domain, isEmailValid:false, mxRecords:[], possibility:true});
+                            resolve({user:user, domain:domain, isEmailValid:false, mxRecords:[], possibility:true, timeout:false});
                         }
                     }
                 }
                 else if (error.code == 'ENOTFOUND')
                 {
-                    resolve({user:user, domain:domain, isEmailValid:false, mxRecords:[], mxRecordExist:false});
+                    resolve({user:user, domain:domain, isEmailValid:false, mxRecords:[], mxRecordExist:false, timeout:false});
                 }
                 else if (error.code == 'ENODATA')
                 {
-                    resolve({user:user, domain:domain, isEmailValid:false, mxRecords:[], possibility:true});
+                    resolve({user:user, domain:domain, isEmailValid:false, mxRecords:[], possibility:true, timeout:false});
+                }
+                else if (error.code == 'ETIMEOUT')
+                {
+                    resolve({user:user, domain:domain, isEmailValid:false, mxRecords:[], possibility:true, timeout:true});
                 }
                 else
                 {
