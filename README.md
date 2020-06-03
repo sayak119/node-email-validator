@@ -1,6 +1,6 @@
 # node-email-validator
 
-This npm package checks that whether an email address is a valid email address or not by checking the MX records. It also has a statistics based check that whether an email address has a possibility of being a `temporary email`, `email belonging to a private organization` or that `mail server is not used much in that region`.
+This npm package checks that whether an email address is a valid email address or not by checking the MX records. It also has a statistics based check that whether an email address has a possibility of being a `temporary email`, `email belonging to a private organization` or that `mail server is not used much in that region`. It also checks if the email address structure follows `RFC 5322 Official Standard` or not.
 
 ## How to install?
 
